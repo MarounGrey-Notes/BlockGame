@@ -88,30 +88,36 @@ var drawingGrid = function() {
 drawingGrid(480, 540, 'grid');
 
 
+  function spawnRandomObject() {
 
-// Game Objects
-var drawSquare = function() {
-  ctx.fillStyle = '#f2a365';
-  ctx.globalCompositeOperation = "destination-over";
-};
-drawSquare();
-
-var objects=[];
-var spawnLineY = 540;
-
-
-// Random Generation
-function spawnRandomObject() {
-
-  // Random X coordinates
-  var numberArray = [0, 60, 120, 180, 240, 300, 360, 420];
-  var randomNumber = numberArray[Math.floor(Math.random() * numberArray.length)];
+    // Random Spawn
+    var numberArray = [0, 60, 120, 180, 240, 300, 360, 420];
+    var randomNumber = numberArray[Math.floor(Math.random() * numberArray.length)];
+    var posY = 240;
+    var posX = randomNumber;
+    // Game Object
+    var drawSquare = function() {
+      ctx.fillStyle = '#f2a365';
+      ctx.globalCompositeOperation = "destination-over";
+      ctx.beginPath();
+      ctx.fillRect(posX, posY, 60, 60);
+    };
+    drawSquare();
+  }
 
 
-  var object = {
-    type: drawSquare(),
-    x: randomNumber,
-    y: spawnLineY
-  };
-objects.push(object);
-}
+
+
+// Blocks moving up
+document.getElementById("button").addEventListener("click", function(){
+  // Spawn random amount of objects
+  for (var i=1; i<Math.floor((Math.random()*8)+1)*2; i++) spawnRandomObject(i);
+});
+
+
+
+// // Delete filled row
+//
+// function arenaSweep() {
+//
+// }
