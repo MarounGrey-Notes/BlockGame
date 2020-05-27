@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shmetris</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- Header -->
+  <div class="header">
+    <h1>Shmetris</h1>
+  </div>
+  <div class="container">
+
+  <!-- Controls -->
+    <div class="row first">
+        <div class="col">
+            <h1>Score: 0</h1>
+        </div>
+    </div>
+
+    <!-- Game Area -->
+    <div class="row mainrow">
+      <div class="col-" id="gamearea">
+<!--
+        <table style="margin: 0px auto">
+          <tbody>
+              <tr>
+                <td tetris-block="" x="0" y="0" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="1" y="0" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="2" y="0" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="3" y="0" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="4" y="0" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="5" y="0" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="6" y="0" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="7" y="0" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td></tr>
+              <tr>
+                <td tetris-block="" x="0" y="1" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="1" y="1" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="2" y="1" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="3" y="1" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="4" y="1" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="5" y="1" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="6" y="1" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="7" y="1" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td></tr>
+              <tr>
+                <td tetris-block="" x="0" y="2" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="1" y="2" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="2" y="2" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="3" y="2" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="4" y="2" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="5" y="2" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="6" y="2" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="7" y="2" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td></tr>
+              <tr>
+                <td tetris-block="" x="0" y="3" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="1" y="3" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="2" y="3" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="3" y="3" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="4" y="3" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="5" y="3" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="6" y="3" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="7" y="3" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td></tr>
+              <tr>
+                <td tetris-block="" x="0" y="4" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="1" y="4" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="2" y="4" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="3" y="4" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="4" y="4" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="5" y="4" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="6" y="4" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="7" y="4" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td></tr>
+              <tr>
+                <td tetris-block="" x="0" y="5" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="1" y="5" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="2" y="5" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="3" y="5" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="4" y="5" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="5" y="5" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="6" y="5" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="7" y="5" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td></tr>
+              <tr>
+                <td tetris-block="" x="0" y="6" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="1" y="6" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="2" y="6" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="3" y="6" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="4" y="6" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="5" y="6" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="6" y="6" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="7" y="6" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td></tr>
+              <tr>
+                <td tetris-block="" x="0" y="7" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="1" y="7" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="2" y="7" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="3" y="7" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="4" y="7" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="5" y="7" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="6" y="7" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td>
+                <td tetris-block="" x="7" y="7" style="width:60px; height:60px; background-color: white; border: 1px solid black; font-size: 0.75rem;"> </td></tr>
+
+                <tr>
+                  <td tetris-block="" x="0" y="8" style="width:60px; height:60px; background-color: white; border: 2px solid black; font-size: 0.75rem;"> </td>
+                  <td tetris-block="" x="1" y="8" style="width:60px; height:60px; background-color: white; border: 2px solid black; font-size: 0.75rem;"> </td>
+                  <td tetris-block="" x="2" y="8" style="width:60px; height:60px; background-color: white; border: 2px solid black; font-size: 0.75rem;"> </td>
+                  <td tetris-block="" x="3" y="8" style="width:60px; height:60px; background-color: white; border: 2px solid black; font-size: 0.75rem;"> </td>
+                  <td tetris-block="" x="4" y="8" style="width:60px; height:60px; background-color: white; border: 2px solid black; font-size: 0.75rem;"> </td>
+                  <td tetris-block="" x="5" y="8" style="width:60px; height:60px; background-color: white; border: 2px solid black; font-size: 0.75rem;"> </td>
+                  <td tetris-block="" x="6" y="8" style="width:60px; height:60px; background-color: white; border: 2px solid black; font-size: 0.75rem;"> </td>
+                  <td tetris-block="" x="7" y="8" style="width:60px; height:60px; background-color: white; border: 2px solid black; font-size: 0.75rem;"> </td></tr>
+
+          </tbody>
+        </table> -->
+
+        <!-- Canvas -->
+        <canvas id="grid" width="480" height="540" style="background: #ececec "></canvas>
+
+      </div>
+    </div>
+
+    <!--  -->
+    <div class="row thirdrow">
+      <div class="col" style="text-align:left;">
+        <h1>Color reference:</h1>
+        <p>#222831, #30475e, #f2a365, #ececec</p>
+
+      </div>
+    </div>
+  </div>
+<!-- Script -->
+  <script src="app.js"></script>
+  </body>
+</html>
