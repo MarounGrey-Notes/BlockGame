@@ -2,9 +2,6 @@
 var canvas = document.getElementById('grid');
 var ctx = canvas.getContext('2d');
 
-// context.fillStyle = '#ececec';
-// context.fillRect(0, 0, canvas.width, canvas.height);
-
 var w = ctx.canvas.width;
 var h = ctx.canvas.height;
 
@@ -87,37 +84,58 @@ var drawingGrid = function() {
 
 drawingGrid(480, 540, 'grid');
 
+var length = 60;
+// Starting coordinates
+var posX = 0;
+var posY = 8 * length;
+var objects = [];
+
+function moveRows(){
+  for(var i = 0; i < objects.length; i++){
+    // remove old objects
+    removeCell(objects[i][0], objects[i][1]);
+    // move objects
+    objects[i][1] -= length;
+  }
+
+  drawingGrid();
+
+  for(var i = 0; i < objects.length; i++){
+    // redraw objects on new location
+    drawCell(objects[i][0], objects[i][1]);
+  }
+}
+// Spawn random amount of blocks on the field
+function gener(){
+  posX = length*Math.floor(8*Math.random());
+}
 
   function spawnRandomObject() {
 
-    // Random Spawn
-    var numberArray = [0, 60, 120, 180, 240, 300, 360, 420];
-    var randomNumber = numberArray[Math.floor(Math.random() * numberArray.length)];
-    var posY = 240;
-    var posX = randomNumber;
     // Game Object
-    var drawSquare = function() {
-      ctx.fillStyle = '#f2a365';
-      ctx.globalCompositeOperation = "destination-over";
-      ctx.beginPath();
-      ctx.fillRect(posX, posY, 60, 60);
-    };
-    drawSquare();
+    drawCell(posX, posY);
+    objects.push([posX, posY]);
   }
 
+function drawCell(x, y, color){
+    ctx.fillStyle = "#f2a365";
+    ctx.globalCompositeOperation = "destination-over";
+    ctx.beginPath();
+    ctx.fillRect(x, y, length, length);
+    ctx.stroke();
+}
 
-
+function removeCell(x, y){
+    ctx.clearRect(x, y, length, length);
+}
 
 // Blocks moving up
 document.getElementById("button").addEventListener("click", function(){
   // Spawn random amount of objects
-  for (var i=1; i<Math.floor((Math.random()*8)+1)*2; i++) spawnRandomObject(i);
+  moveRows();
+  for (var i=0; i<Math.floor((Math.random()*8)+1)*2; i++){
+    gener();
+    spawnRandomObject();
+
+  }
 });
-
-
-
-// // Delete filled row
-//
-// function arenaSweep() {
-//
-// }
